@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Examen | Algoritmos y Programación II</title>
+<style>
+:root{--ink:#172033;--muted:#647084;--line:#dbe1ea;--paper:#fff;--bg:#f3f6fb;--blue:#2458d3;--blue2:#eaf0ff;--green:#137547;--greenbg:#e9f8ef;--red:#b42318;--redbg:#fff0ee;--gold:#8a5a00;--goldbg:#fff6d9;--shadow:0 18px 48px rgba(20,35,65,.09)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}.wrap{max-width:940px;margin:0 auto;padding:26px 18px 50px}.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}.brandmark{width:46px;height:46px;border-radius:14px;background:var(--blue);color:white;display:grid;place-items:center;font-weight:800;font-size:19px}.brand small{display:block;color:var(--muted);font-size:13px}.brand strong{font-size:16px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:clamp(22px,4vw,38px)}h1{font-size:clamp(27px,4vw,38px);line-height:1.15;letter-spacing:-.035em;margin:0 0 12px}h2{font-size:24px;line-height:1.25;margin:0 0 12px}h3{font-size:18px;margin:0 0 8px}p{margin:0 0 14px}.muted{color:var(--muted)}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--blue);margin-bottom:10px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.chip{background:#f1f4f9;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:13px;color:#354159}.note{padding:14px 16px;border-radius:14px;background:#f7f9fc;border:1px solid var(--line);font-size:14px;color:#48546a}.formrow{margin:22px 0 18px}.formrow label{display:block;font-weight:700;margin-bottom:8px}.formrow input{width:100%;padding:14px 15px;border:1px solid #c6cedb;border-radius:12px;background:white;outline:none}.formrow input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #2458d322}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{border:1px solid transparent;border-radius:12px;padding:12px 18px;font-weight:750;display:inline-flex;justify-content:center;align-items:center;gap:8px}.btn.primary{background:var(--blue);color:white}.btn.secondary{background:white;border-color:var(--line);color:var(--ink)}.btn.danger{background:var(--red);color:white}.btn:disabled{opacity:.45;cursor:not-allowed}.timerbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 18px;padding:12px 15px;border:1px solid var(--line);border-radius:13px;background:#f7f9fc}.timerbar .timer-label{font-size:13px;color:var(--muted);font-weight:750}.timerbar .timer-value{font-size:clamp(20px,3vw,25px);font-weight:850;font-variant-numeric:tabular-nums;letter-spacing:.03em;color:var(--blue)}.timerbar.warning{border-color:#efcf80;background:var(--goldbg)}.timerbar.warning .timer-value{color:var(--gold)}.timerbar.expired{border-color:#efb2ad;background:var(--redbg)}.timerbar.expired .timer-value{color:var(--red)}.progressline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;color:var(--muted);font-size:13px;font-weight:700}.progress{height:8px;background:#e6ebf3;border-radius:99px;overflow:hidden;margin-bottom:25px}.progress span{display:block;height:100%;background:var(--blue);transition:width .2s}.qmeta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:13px}.pill{font-size:12px;font-weight:800;border-radius:99px;padding:5px 9px;background:var(--blue2);color:var(--blue)}.pill.level{background:#f0f2f6;color:#465168}.qtext{font-size:clamp(19px,2.7vw,23px);line-height:1.45;font-weight:720;margin-bottom:22px;white-space:pre-wrap}.options{display:grid;gap:10px}.option{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:14px 15px;background:white;cursor:pointer;transition:.15s}.option:hover{border-color:#9eb3ee;background:#fbfcff}.option.selected{border-color:var(--blue);background:var(--blue2);box-shadow:inset 0 0 0 1px var(--blue)}.letter{flex:0 0 28px;height:28px;border:1px solid #d5dce8;border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:13px;background:white}.option.selected .letter{background:var(--blue);color:white;border-color:var(--blue)}.opttext{padding-top:2px}.questionnav{display:flex;justify-content:space-between;gap:12px;margin-top:25px;padding-top:20px;border-top:1px solid var(--line)}.tiny{font-size:13px}.question-dots{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 24px}.dot{height:34px;min-width:34px;border-radius:10px;border:1px solid var(--line);background:white;font-weight:750;color:#536075}.dot.current{border-color:var(--blue);box-shadow:0 0 0 2px #2458d322;color:var(--blue)}.dot.done{background:var(--blue2);border-color:#b9c9fa;color:var(--blue)}.hidden{display:none!important}.result-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}.status{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:8px 12px;font-weight:800;font-size:13px}.status.pass{background:var(--greenbg);color:var(--green)}.status.fail{background:var(--redbg);color:var(--red)}.scoregrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:25px 0}.scorebox{padding:17px;border:1px solid var(--line);border-radius:15px;background:#fbfcfe}.scorebox span{display:block;color:var(--muted);font-size:13px;font-weight:650}.scorebox strong{display:block;font-size:clamp(24px,4vw,32px);letter-spacing:-.03em;margin-top:3px}.scorebox small{color:var(--muted)}.review{margin-top:28px}.review-item{border:1px solid var(--line);border-radius:14px;margin:10px 0;padding:16px}.review-item.correct{border-left:5px solid #1b8b52}.review-item.incorrect{border-left:5px solid #d33b32}.review-title{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}.answerline{margin-top:10px;font-size:14px}.correcttext{color:var(--green);font-weight:750}.wrongtext{color:var(--red);font-weight:750}.explanation{margin-top:8px;padding:10px 12px;background:#f6f8fb;border-radius:10px;color:#465168;font-size:14px}.footer{margin-top:20px;text-align:center;font-size:12px;color:var(--muted)}.result-print{display:none}.mini-rule{height:1px;background:var(--line);margin:22px 0}.lock{border:1px solid #f1d48a;background:var(--goldbg);color:#684700;border-radius:14px;padding:15px;margin-top:18px}.lock strong{display:block;margin-bottom:4px}@media(max-width:560px){.wrap{padding:16px 11px 30px}.panel{border-radius:17px;padding:21px 17px}.scoregrid{grid-template-columns:1fr 1fr}.scorebox:last-child{grid-column:span 2}.questionnav{align-items:stretch}.questionnav .btn{flex:1;padding:11px 10px}.brand{margin-bottom:15px}}@media print{body{background:white}.wrap{max-width:none;padding:0}.brand,.no-print,#intro,#exam,.footer{display:none!important}#result{display:block!important}.panel{box-shadow:none;border:0;padding:0}.review-item{break-inside:avoid}.result-head{border-bottom:2px solid #222;padding-bottom:15px}.scorebox{background:white}.result-print{display:block}.review{margin-top:18px}.review-item{padding:10px 12px;margin:7px 0}.explanation{background:#f7f7f7}.status{border:1px solid currentColor}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="brand">
+    <div class="brandmark">A2</div>
+    <div><strong>Algoritmos y Programación II</strong><small>Evaluación de programación orientada a objetos · Java</small></div>
+  </header>
+
+  <section id="intro" class="panel">
+    <div class="eyebrow">Evaluación individual</div>
+    <h1>Examen de conocimientos</h1>
+    <p class="muted">Responde 10 preguntas de selección múltiple. Lee con atención cada enunciado y elige una sola respuesta.</p>
+    <div class="chips">
+      <span class="chip">10 preguntas aleatorias</span><span class="chip">Una respuesta por pregunta</span><span class="chip">Nota sobre 5,0</span><span class="chip">Aprobación: 3,0</span>
+    </div>
+    <div class="formrow">
+      <label for="studentName">Nombre completo del estudiante</label>
+      <input id="studentName" type="text" maxlength="100" autocomplete="name" placeholder="Escribe tu nombre y apellidos">
+    </div>
+    <div class="note"><strong>Antes de comenzar:</strong> el examen permite un solo intento en este navegador. Al iniciar, el intento queda reservado; si cierras o actualizas la página, podrás continuar el mismo intento en este navegador. Al finalizar, no podrás repetirlo desde aquí.</div>
+    <div class="actions"><button id="startBtn" class="btn primary">Comenzar examen →</button></div>
+    <div id="introLock" class="lock hidden"><strong>Este navegador ya tiene un intento registrado.</strong><span id="introLockText"></span></div>
+  </section>
+
+  <section id="exam" class="panel hidden" aria-live="polite">
+    <div id="timerBar" class="timerbar" role="timer" aria-live="polite"><span class="timer-label">Tiempo restante · límite de 30 minutos</span><strong id="timerValue" class="timer-value">30:00</strong></div>
+    <div class="progressline"><span id="progressLabel">Pregunta 1 de 10</span><span id="answeredLabel">0 de 10 respondidas</span></div>
+    <div class="progress" aria-label="Progreso del examen"><span id="progressBar" style="width:10%"></span></div>
+    <div id="dots" class="question-dots" aria-label="Navegar entre preguntas"></div>
+    <div class="qmeta"><span id="topicPill" class="pill">Tema</span><span id="levelPill" class="pill level">Nivel</span></div>
+    <div id="questionText" class="qtext"></div>
+    <div id="options" class="options"></div>
+    <div class="questionnav">
+      <button id="prevBtn" class="btn secondary">← Anterior</button>
+      <button id="nextBtn" class="btn primary">Siguiente →</button>
+      <button id="submitBtn" class="btn danger hidden">Finalizar examen</button>
+    </div>
+    <p class="muted tiny" style="margin-top:15px">Puedes cambiar tus respuestas antes de finalizar. La nota se calcula al entregar el examen.</p>
+  </section>
+
+  <section id="result" class="panel hidden">
+    <div class="result-head">
+      <div>
+        <div class="eyebrow">Resultado del examen</div>
+        <h1 id="resultStudent">Estudiante</h1>
+        <p class="muted" id="resultDate"></p>
+      </div>
+      <div id="resultStatus" class="status pass">✓ Aprobado</div>
+    </div>
+    <div class="scoregrid">
+      <div class="scorebox"><span>Nota final</span><strong id="score">0,0 / 5,0</strong><small id="scorePercent">0 %</small></div>
+      <div class="scorebox"><span>Respuestas correctas</span><strong id="correctCount">0/10</strong><small>Un punto por pregunta, ponderación uniforme</small></div>
+      <div class="scorebox"><span>Respuestas incorrectas o vacías</span><strong id="wrongCount">0</strong><small>Nota mínima aprobatoria: 3,0</small></div>
+    </div>
+    <div class="note"><strong>Resultado guardado en este navegador.</strong> Puedes tomar una captura de pantalla de esta página o usar «Imprimir / Guardar PDF». La pantalla incluye las respuestas correctas para retroalimentación.<span id="timeoutNotice" class="hidden"><br><strong>Tiempo agotado:</strong> el examen se entregó automáticamente al cumplirse el límite de 30 minutos.</span></div>
+    <div class="actions no-print">
+      <button id="printBtn" class="btn primary">Imprimir / Guardar PDF</button>
+      <button id="captureHintBtn" class="btn secondary">Cómo tomar captura</button>
+    </div>
+    <div id="captureHint" class="note hidden no-print" style="margin-top:12px">Windows: pulsa <strong>Win + Shift + S</strong> y selecciona el área del resultado. También puedes usar la herramienta de captura de tu dispositivo. Para guardar una versión imprimible, selecciona «Imprimir / Guardar PDF».</div>
+    <div class="mini-rule"></div>
+    <div class="review">
+      <h2>Revisión de respuestas</h2>
+      <p class="muted">Consulta la respuesta que elegiste, la solución correcta y una breve explicación.</p>
+      <div id="reviewList"></div>
+    </div>
+    <div class="footer">Evaluación de Algoritmos y Programación II · Registro local del navegador</div>
+  </section>
+  <div class="footer">Banco de preguntas sobre ArrayList de objetos, herencia, polimorfismo dinámico y relaciones entre objetos.</div>
+</div>
+
+<script>
+const QUESTION_BANK = [{"level":"Fácil","topic":"ArrayList de objetos","question":"¿Qué permite almacenar un `ArrayList<Estudiante>`?","options":["Únicamente números enteros","Varios objetos de tipo Estudiante","Una sola variable primitiva","Solo texto"],"answer":1,"explanation":"Un ArrayList parametrizado con Estudiante puede almacenar referencias a objetos Estudiante."},{"level":"Fácil","topic":"ArrayList de objetos","question":"¿Qué método se usa normalmente para añadir un objeto a un ArrayList?","options":["push()","append()","add()","insertarFinal()"],"answer":2,"explanation":"El método add(elemento) agrega un elemento a la colección."},{"level":"Fácil","topic":"ArrayList de objetos","question":"Si `estudiantes` es un ArrayList, ¿qué devuelve `estudiantes.size()`?","options":["La cantidad de elementos","El último elemento","La capacidad máxima fija","La posición del primer elemento"],"answer":0,"explanation":"size() devuelve cuántos elementos hay actualmente en la lista."},{"level":"Fácil","topic":"ArrayList de objetos","question":"¿Cuál es el índice del primer elemento de un ArrayList en Java?","options":["1","-1","Depende del tamaño","0"],"answer":3,"explanation":"Los índices de las listas de Java comienzan en cero."},{"level":"Fácil","topic":"ArrayList de objetos","question":"¿Qué método permite obtener el elemento de la posición 2?","options":["estudiantes.get(2)","estudiantes[2]","estudiantes.read(2)","estudiantes.element(2)"],"answer":0,"explanation":"get(índice) devuelve el elemento ubicado en esa posición."},{"level":"Fácil","topic":"Herencia","question":"¿Qué palabra clave utiliza Java para indicar que una clase hereda de otra clase?","options":["implements","extends","inherits","super"],"answer":1,"explanation":"Una clase usa extends para heredar de otra clase."},{"level":"Fácil","topic":"Herencia","question":"Si `Perro extends Animal`, ¿qué expresa esa declaración?","options":["Animal hereda de Perro","Perro y Animal son la misma clase","Perro es una subclase de Animal","Perro no puede tener métodos"],"answer":2,"explanation":"Perro hereda de Animal y es su subclase."},{"level":"Fácil","topic":"Herencia","question":"¿Qué representa normalmente la relación de herencia?","options":["Tiene-un","Usa-un únicamente","Parte-de","Es-un"],"answer":3,"explanation":"La herencia suele modelar una relación «es-un», como Perro es un Animal."},{"level":"Fácil","topic":"Herencia","question":"¿Qué constructor se llama desde una subclase para invocar explícitamente un constructor de la superclase?","options":["super(...)","thisClass(...)","extends(...)","parent(...)"],"answer":0,"explanation":"super(...) invoca un constructor de la clase padre."},{"level":"Fácil","topic":"Herencia","question":"¿Una clase Java puede extender directamente dos clases concretas?","options":["Sí, siempre","No, Java permite extender una sola clase","Solo si son abstractas","Solo si no tienen métodos"],"answer":1,"explanation":"Java no permite herencia múltiple de clases; sí permite implementar varias interfaces."},{"level":"Fácil","topic":"Polimorfismo dinámico","question":"¿Qué significa el polimorfismo en programación orientada a objetos?","options":["Que una clase no tiene atributos","Que los objetos no pueden tener métodos","Que una referencia de tipo padre puede referirse a objetos de subclases","Que todos los métodos son estáticos"],"answer":2,"explanation":"Una referencia de tipo superclase puede apuntar a instancias de subclases."},{"level":"Fácil","topic":"Polimorfismo dinámico","question":"Si una subclase redefine un método de su padre, ¿qué anotación se recomienda usar?","options":["@Inherited","@Parent","@Override","@Replace"],"answer":2,"explanation":"@Override permite indicar y comprobar que se está sobrescribiendo un método."},{"level":"Fácil","topic":"Polimorfismo dinámico","question":"En `Animal a = new Perro(); a.hacerSonido();`, ¿qué implementación se ejecuta si Perro sobrescribe el método?","options":["La de Animal siempre","La de Perro","Ninguna","La que aparezca primero en el archivo"],"answer":1,"explanation":"La implementación se selecciona según el tipo real del objeto en tiempo de ejecución."},{"level":"Fácil","topic":"Polimorfismo dinámico","question":"¿Qué tipo de método participa normalmente en el polimorfismo dinámico por sobrescritura?","options":["Método de instancia sobrescribible","Constructor","Variable local","Método privado heredado como sobrescribible"],"answer":0,"explanation":"La selección dinámica aplica a métodos de instancia sobrescritos."},{"level":"Fácil","topic":"Polimorfismo dinámico","question":"¿Qué es una referencia de tipo `Animal` que apunta a un objeto `Gato`?","options":["Una conversión imposible","Un error siempre","Un ejemplo de polimorfismo","Una interfaz gráfica"],"answer":2,"explanation":"Una referencia de la superclase puede apuntar a una instancia de una subclase."},{"level":"Fácil","topic":"Relaciones entre objetos","question":"Si una clase `Carro` tiene un atributo `Motor`, ¿qué relación se está representando de forma general?","options":["Herencia","Una relación entre objetos (tiene-un)","Polimorfismo obligatorio","Una variable primitiva"],"answer":1,"explanation":"Un atributo de tipo Motor representa una relación de tipo tiene-un."},{"level":"Fácil","topic":"Relaciones entre objetos","question":"¿Qué significa que un objeto tenga una referencia a otro objeto como atributo?","options":["Que el segundo objeto no existe","Que hay una relación entre ambos objetos","Que ambos son la misma instancia obligatoriamente","Que el programa no compila"],"answer":1,"explanation":"Una referencia como atributo conecta objetos y permite colaborar entre ellos."},{"level":"Fácil","topic":"Relaciones entre objetos","question":"¿Cuál es un ejemplo claro de relación uno a muchos?","options":["Un estudiante tiene un nombre","Una persona tiene una fecha de nacimiento","Un departamento contiene varios empleados","Un número es mayor que otro"],"answer":2,"explanation":"Un departamento puede relacionarse con una colección de empleados."},{"level":"Fácil","topic":"Relaciones entre objetos","question":"¿Qué relación suele describir mejor `Pedido` y `Cliente`, cuando cada pedido corresponde a un cliente?","options":["Herencia","Polimorfismo","Cliente extiende Pedido","Asociación"],"answer":3,"explanation":"Pedido y Cliente son clases distintas que se relacionan mediante una asociación."},{"level":"Fácil","topic":"Relaciones entre objetos","question":"¿Qué ventaja aporta dividir un programa en clases relacionadas con responsabilidades claras?","options":["Mejora la organización y el mantenimiento","Evita utilizar métodos","Elimina todos los errores automáticamente","Hace innecesarios los objetos"],"answer":0,"explanation":"Las responsabilidades claras ayudan a organizar, mantener y probar el código."},{"level":"Intermedia","topic":"ArrayList de objetos","question":"¿Cuál es la forma correcta de declarar una lista de objetos `Producto`?","options":["ArrayList lista = Producto;","ArrayList<Producto> productos = new ArrayList<>();","Producto[] productos = new ArrayList<>();","List<int> productos = new List<>();"],"answer":1,"explanation":"La declaración genérica ArrayList<Producto> limita el tipo de elementos a Producto."},{"level":"Intermedia","topic":"ArrayList de objetos","question":"Dado `ArrayList<String> nombres`, ¿qué hace `nombres.remove(0)`?","options":["Elimina el elemento del índice 0","Elimina todas las cadenas vacías","Devuelve el tamaño","Ordena la lista"],"answer":0,"explanation":"remove(int index) elimina el elemento que está en ese índice."},{"level":"Intermedia","topic":"ArrayList de objetos","question":"¿Qué sucede si se llama `lista.get(5)` cuando la lista solo tiene tres elementos?","options":["Devuelve null siempre","Devuelve el último elemento","Lanza IndexOutOfBoundsException","Amplía automáticamente la lista"],"answer":2,"explanation":"Un índice fuera del rango válido provoca IndexOutOfBoundsException."},{"level":"Intermedia","topic":"ArrayList de objetos","question":"¿Cuál es una forma habitual de recorrer todos los objetos de `productos`?","options":["for (Producto p : productos) { ... }","if (Producto p in productos)","foreach productos as Producto","loop(productos, Producto)"],"answer":0,"explanation":"El for-each recorre los elementos de una colección sin manejar índices."},{"level":"Intermedia","topic":"ArrayList de objetos","question":"¿Qué permite hacer `productos.get(i).getPrecio()` si `get(i)` devuelve un Producto?","options":["Consultar el precio del objeto en esa posición","Cambiar el tipo de toda la lista","Obtener siempre el índice","Crear una lista nueva"],"answer":0,"explanation":"get(i) obtiene el objeto y luego se llama su método getPrecio()."},{"level":"Intermedia","topic":"Herencia","question":"¿Qué permite una subclase heredar de su superclase, según los modificadores de acceso?","options":["Todos los miembros privados son accesibles directamente","Solo los constructores","Miembros heredables como métodos públicos y protegidos","Nada de la superclase"],"answer":2,"explanation":"Los miembros públicos y protegidos son accesibles según las reglas de Java; los privados no son accesibles directamente desde la subclase."},{"level":"Intermedia","topic":"Herencia","question":"¿Qué ocurre si un constructor de la subclase no llama explícitamente a `super(...)`?","options":["Java intenta insertar una llamada a `super()` sin argumentos","Nunca se llama al constructor padre","Se crea una clase nueva","El constructor se convierte en estático"],"answer":0,"explanation":"Java inserta super() implícitamente si no hay otra llamada, siempre que exista un constructor padre sin argumentos accesible."},{"level":"Intermedia","topic":"Herencia","question":"¿Qué relación hay entre `Vehiculo` y `Motocicleta` si `Motocicleta extends Vehiculo`?","options":["Motocicleta contiene Vehiculo necesariamente","Vehiculo es subclase de Motocicleta","Motocicleta es subclase de Vehiculo","Son clases sin relación"],"answer":2,"explanation":"La subclase es Motocicleta y la superclase es Vehiculo."},{"level":"Intermedia","topic":"Herencia","question":"¿Cuál es una razón válida para declarar una clase como `abstract`?","options":["Impedir que tenga métodos","Representar una base que no se instancia directamente y puede definir comportamiento común","Hacer todos los atributos públicos","Permitir extender varias clases"],"answer":1,"explanation":"Una clase abstracta sirve como base y no puede instanciarse directamente."},{"level":"Intermedia","topic":"Herencia","question":"¿Qué sucede con un método `public` heredado que la subclase no sobrescribe?","options":["Desaparece automáticamente","Se vuelve privado","No puede llamarse nunca","La subclase puede usar el comportamiento heredado"],"answer":3,"explanation":"Si no se sobrescribe, la subclase puede usar el método heredado según su acceso."},{"level":"Intermedia","topic":"Polimorfismo dinámico","question":"Con `Figura f = new Circulo();`, si ambos definen `dibujar()` y Circulo lo sobrescribe, ¿cuál se ejecuta con `f.dibujar()`?","options":["Figura.dibujar siempre","Circulo.dibujar","Ambos obligatoriamente","Depende del nombre de la variable"],"answer":1,"explanation":"El método sobrescrito se selecciona usando el tipo real del objeto."},{"level":"Intermedia","topic":"Polimorfismo dinámico","question":"¿Qué describe mejor el enlace dinámico?","options":["La selección en ejecución de la implementación sobrescrita","La selección de una variable en compilación únicamente","La creación de constructores","La conversión de int a double"],"answer":0,"explanation":"El enlace dinámico decide en tiempo de ejecución qué implementación de instancia invocar."},{"level":"Intermedia","topic":"Polimorfismo dinámico","question":"¿Qué afirmación sobre una referencia de superclase es correcta?","options":["Puede llamar directamente cualquier método exclusivo de la subclase","Cambia automáticamente su tipo declarado","Solo puede apuntar a objetos de la superclase exacta","Solo permite invocar métodos conocidos por el tipo declarado, salvo conversión"],"answer":3,"explanation":"El compilador valida los métodos usando el tipo declarado de la referencia."},{"level":"Intermedia","topic":"Polimorfismo dinámico","question":"Si `Animal a = new Gato();`, ¿qué permite `a.comer()` si comer está declarado en Animal y sobrescrito en Gato?","options":["Ejecutar la implementación de Gato","Llamar únicamente al constructor","Provocar siempre un error","Cambiar a la referencia a null"],"answer":0,"explanation":"La implementación sobrescrita de Gato se ejecuta mediante el despacho dinámico."},{"level":"Intermedia","topic":"Polimorfismo dinámico","question":"¿Cuál es la diferencia general entre sobrecarga y sobrescritura?","options":["Son exactamente lo mismo","La sobrecarga cambia parámetros; la sobrescritura redefine un método heredado compatible","La sobrescritura solo ocurre entre métodos privados","La sobrecarga requiere herencia siempre"],"answer":1,"explanation":"La sobrecarga distingue firmas de parámetros; la sobrescritura redefine un método heredado."},{"level":"Intermedia","topic":"Relaciones entre objetos","question":"Una clase `Universidad` guarda un `ArrayList<Estudiante>`. ¿Qué relación modela de forma directa?","options":["Herencia","Dependencia de compilación únicamente","Una relación uno-a-muchos","Polimorfismo estático"],"answer":2,"explanation":"La colección de estudiantes representa una relación de una universidad con muchos estudiantes."},{"level":"Intermedia","topic":"Relaciones entre objetos","question":"¿Cuál es un ejemplo de composición más fuerte?","options":["Un equipo usa un estadio para un partido","Una factura calcula un impuesto","Un estudiante consulta una biblioteca","Un objeto Casa contiene habitaciones cuyo ciclo de vida depende de la casa en el modelo"],"answer":3,"explanation":"La composición expresa una relación todo-parte fuerte; las partes se consideran vinculadas al ciclo de vida del todo."},{"level":"Intermedia","topic":"Relaciones entre objetos","question":"¿Qué es una dependencia entre clases?","options":["Una clase utiliza temporalmente otra, por ejemplo como parámetro de un método","Una clase hereda siempre de otra","Dos clases tienen que ser idénticas","Una clase no puede crear objetos"],"answer":0,"explanation":"Una dependencia aparece cuando una clase usa a otra para realizar una tarea."},{"level":"Intermedia","topic":"Relaciones entre objetos","question":"¿Qué favorece la encapsulación en una clase `Cuenta` relacionada con `Cliente`?","options":["Hacer todos los atributos públicos","Proteger el estado interno y exponer operaciones controladas","Evitar todos los métodos","Hacer que Cliente herede de Cuenta siempre"],"answer":1,"explanation":"La encapsulación protege el estado y permite controlarlo mediante una interfaz pública."},{"level":"Intermedia","topic":"Relaciones entre objetos","question":"Si una clase `Curso` tiene un atributo `Profesor`, ¿cómo se accede normalmente al profesor asociado desde una instancia curso?","options":["Curso.Profesor sin objeto ni método","Profesor[curso] siempre","Mediante el atributo o un método accesor como `curso.getProfesor()`","Con `extends Profesor`"],"answer":2,"explanation":"La relación se navega mediante una referencia al objeto, a menudo expuesta por un getter."},{"level":"Medio-alta","topic":"ArrayList de objetos","question":"¿Qué imprime el código? `ArrayList<Persona> ps = new ArrayList<>(); ps.add(new Persona(\"Ana\")); Persona p = ps.get(0); p.setNombre(\"Eva\"); System.out.println(ps.get(0).getNombre());`","options":["Ana","Eva","null","No compila porque get devuelve una copia"],"answer":1,"explanation":"p y ps.get(0) refieren al mismo objeto; cambiar su nombre se observa desde la lista."},{"level":"Medio-alta","topic":"ArrayList de objetos","question":"¿Cuál es el problema de eliminar elementos de un ArrayList recorriéndolo con un índice que siempre aumenta?","options":["No se puede usar remove en una lista","La lista se vuelve inmutable","Al borrar un elemento, los siguientes se desplazan y se puede saltar uno","El tamaño siempre queda igual"],"answer":2,"explanation":"Después de borrar en i, el siguiente elemento ocupa ese índice; al incrementar i se puede omitir."},{"level":"Medio-alta","topic":"ArrayList de objetos","question":"¿Qué ocurre con `ArrayList<Empleado> empleados` al ejecutar `empleados.remove(new Empleado(7))`?","options":["Elimina por igualdad según equals() si encuentra un elemento equivalente","Elimina siempre el elemento del índice 7","Elimina todos los empleados","No compila en Java"],"answer":0,"explanation":"remove(Object) busca un elemento equivalente usando equals; el resultado depende de cómo se haya implementado."},{"level":"Medio-alta","topic":"ArrayList de objetos","question":"¿Cuál es la ventaja principal de usar `ArrayList<Producto>` frente a un `ArrayList` sin tipo genérico?","options":["Obliga a que todos los productos tengan el mismo precio","Evita toda excepción en tiempo de ejecución","Hace que la lista tenga tamaño fijo","Aporta comprobación de tipos en compilación y reduce conversiones explícitas"],"answer":3,"explanation":"Los genéricos mejoran la seguridad de tipos y evitan muchos casts."},{"level":"Medio-alta","topic":"ArrayList de objetos","question":"Una lista contiene referencias a objetos y se ejecuta `lista.clear()`. ¿Qué describe mejor su efecto?","options":["Destruye de inmediato todos los objetos en memoria","Elimina las referencias de la lista; los objetos pueden seguir existiendo si hay otras referencias","Convierte todos los objetos a null","Borra la clase de cada objeto"],"answer":1,"explanation":"clear() vacía la colección; la memoria de objetos se recupera si dejan de estar referenciados y el recolector actúa."},{"level":"Medio-alta","topic":"Herencia","question":"Una subclase sobrescribe un método `public double calcular()`. ¿Cuál de estas declaraciones sería inválida por reducir acceso?","options":["public double calcular()","protected double calcular()","public double calcular(int x)","public double calcular() throws RuntimeException"],"answer":1,"explanation":"Una sobrescritura no puede reducir la visibilidad; protected sería más restrictivo que public."},{"level":"Medio-alta","topic":"Herencia","question":"¿Cuál afirmación sobre constructores y herencia en Java es correcta?","options":["Los constructores no se heredan; la subclase define sus propios constructores","Los constructores se sobrescriben con @Override","Un constructor de la subclase reemplaza al del padre","Todos los constructores son públicos"],"answer":0,"explanation":"Los constructores no son miembros heredados ni se sobrescriben."},{"level":"Medio-alta","topic":"Herencia","question":"Una clase `Empleado` es abstracta y declara `abstract double calcularPago();`. ¿Qué debe hacer una subclase concreta?","options":["Declarar todos los campos como static","Extender dos clases","Implementar el método abstracto heredado o seguir siendo abstracta","Eliminar el método de la clase padre"],"answer":2,"explanation":"Una clase concreta debe implementar los métodos abstractos pendientes."},{"level":"Medio-alta","topic":"Herencia","question":"¿Qué indica `protected` en un miembro de una clase, de forma general?","options":["Que solo puede usarse dentro de cualquier clase sin restricciones","Que no puede heredarse","Que solo lo usa el compilador","Que es accesible en el paquete y también en subclases según las reglas de Java"],"answer":3,"explanation":"protected permite acceso dentro del paquete y desde subclases bajo las reglas del lenguaje."},{"level":"Medio-alta","topic":"Herencia","question":"Si `B extends A` y A tiene un método `final void ejecutar()`, ¿qué sucede si B intenta sobrescribirlo?","options":["Se permite si usa @Override","No se permite sobrescribir un método final","El método final se vuelve abstracto","B deja de heredar de A"],"answer":1,"explanation":"Los métodos final no pueden sobrescribirse en una subclase."},{"level":"Medio-alta","topic":"Polimorfismo dinámico","question":"¿Qué imprime? `class A { String f(){return \"A\";} } class B extends A { String f(){return \"B\";} } A x = new B(); System.out.println(x.f());`","options":["A","AB","B","Error por asignación"],"answer":2,"explanation":"El objeto real es B y su método sobrescrito se ejecuta."},{"level":"Medio-alta","topic":"Polimorfismo dinámico","question":"Dado `Animal a = new Perro();`, el método `ladrar()` solo existe en Perro. ¿Cuál afirmación es correcta?","options":["`a.ladrar()` no compila sin conversión porque el tipo declarado es Animal","`a.ladrar()` siempre compila por ser el objeto un Perro","Java convierte automáticamente a Perro para cualquier método","Todos los métodos de Perro se agregan a la referencia Animal"],"answer":0,"explanation":"La comprobación de miembros se basa en el tipo declarado; se necesita un cast seguro o un diseño distinto."},{"level":"Medio-alta","topic":"Polimorfismo dinámico","question":"¿Qué puede hacer `if (a instanceof Perro) { ((Perro)a).ladrar(); }` si a es una referencia Animal?","options":["Convertir cualquier objeto en Perro sin importar su tipo","Llamar un método estático de Animal solamente","Evitar que el programa compile","Comprobar el tipo real antes de convertir la referencia"],"answer":3,"explanation":"instanceof permite verificar compatibilidad antes de realizar el cast."},{"level":"Medio-alta","topic":"Polimorfismo dinámico","question":"¿Cuál afirmación sobre métodos estáticos es correcta?","options":["Se sobrescriben dinámicamente igual que los métodos de instancia","Se ocultan, no participan en el despacho dinámico de sobrescritura","No pueden tener nombres","Solo existen en interfaces"],"answer":1,"explanation":"Los métodos static se asocian a la clase y se resuelven según el tipo declarado, no por despacho dinámico."},{"level":"Medio-alta","topic":"Polimorfismo dinámico","question":"¿Cuál es una ventaja de programar con una colección `ArrayList<Figura>` que almacena `Circulo` y `Rectangulo`?","options":["Permite tratar objetos distintos mediante una interfaz común, por ejemplo llamar a area()","Obliga a que todos sean de la misma subclase concreta","Impide sobrescribir métodos","Evita definir una superclase"],"answer":0,"explanation":"El polimorfismo permite recorrer figuras distintas y llamar al comportamiento común sobrescrito."},{"level":"Medio-alta","topic":"Relaciones entre objetos","question":"¿Cuál describe mejor la diferencia entre asociación y herencia?","options":["Ambas significan exclusivamente es-un","La asociación requiere que una clase extienda otra","La herencia modela es-un; la asociación modela una conexión entre objetos","La asociación solo existe con variables primitivas"],"answer":2,"explanation":"Herencia define una jerarquía de tipos; asociación conecta objetos relacionados."},{"level":"Medio-alta","topic":"Relaciones entre objetos","question":"En un sistema, `Pedido` mantiene una lista de `LineaPedido`, y cada línea pertenece a un pedido concreto. ¿Qué diseño expresa mejor la relación todo-parte?","options":["Herencia: LineaPedido extends Pedido","Composición entre Pedido y sus líneas, si las líneas dependen del pedido","Polimorfismo entre pedido y número","Dependencia solo de compilación sin referencias"],"answer":1,"explanation":"Si las líneas no tienen sentido independientemente del pedido, la composición es un modelo adecuado."},{"level":"Medio-alta","topic":"Relaciones entre objetos","question":"¿Por qué conviene evitar que dos clases se conozcan y controlen mutuamente demasiados detalles internos?","options":["Porque Java prohíbe las referencias entre objetos","Porque elimina la necesidad de pruebas","Porque impide instanciar las clases","Porque aumenta el acoplamiento y dificulta cambiar o probar el sistema"],"answer":3,"explanation":"Un acoplamiento excesivo hace que cambios en una clase repercutan en otras."},{"level":"Medio-alta","topic":"Relaciones entre objetos","question":"¿Qué representa una relación de agregación en el modelo orientado a objetos?","options":["Una relación todo-parte relativamente débil en la que las partes pueden existir independientemente","Que una clase hereda todos los atributos de otra","Una llamada recursiva obligatoria","Una variable local de tipo primitivo"],"answer":0,"explanation":"La agregación representa un todo y sus partes sin exigir dependencia fuerte del ciclo de vida."},{"level":"Medio-alta","topic":"Relaciones entre objetos","question":"Una clase `Biblioteca` recibe un objeto `Socio` como parámetro de `prestarLibro(Socio s)`, pero no lo guarda. ¿Qué relación se observa principalmente en ese método?","options":["Composición permanente","Herencia múltiple","Dependencia/uso temporal de Socio","Polimorfismo por constructor"],"answer":2,"explanation":"El método usa el objeto Socio durante la operación sin necesariamente mantener una asociación persistente."}];
+const STORAGE_KEY = "algoritmos_programacion_ii_exam_v1";
+const PASSING_GRADE = 3.0;
+const TOTAL_QUESTIONS = 10;
+const letters = ["A","B","C","D"];
+let state = null;
+let currentIndex = 0;
+let timerInterval = null;
+const EXAM_DURATION_MS = 30 * 60 * 1000;
+
+const $ = id => document.getElementById(id);
+const shuffle = arr => {
+  const copy = arr.slice();
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+};
+function chooseBalancedQuestions() {
+  const easy = shuffle(QUESTION_BANK.filter(q => q.level === "Fácil")).slice(0,4);
+  const medium = shuffle(QUESTION_BANK.filter(q => q.level === "Intermedia")).slice(0,3);
+  const hard = shuffle(QUESTION_BANK.filter(q => q.level === "Medio-alta")).slice(0,3);
+  return shuffle([...easy, ...medium, ...hard]).map(q => ({...q, options: q.options.slice(), selected: null}));
+}
+function saveState() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+}
+function readState() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch (_) { return null; }
+}
+function showOnly(id) {
+  ["intro","exam","result"].forEach(section => $(section).classList.toggle("hidden", section !== id));
+}
+function formatDate(iso) {
+  return new Date(iso).toLocaleString("es-CO", {dateStyle:"long", timeStyle:"short"});
+}
+function init() {
+  state = readState();
+  if (!state) {
+    showOnly("intro");
+    return;
+  }
+  $("studentName").value = state.name || "";
+  if (state.status === "completed") renderResult();
+  else if (state.status === "in_progress") {
+    if (!state.deadlineAt) {
+      const started = new Date(state.startedAt || Date.now()).getTime();
+      state.deadlineAt = new Date(started + EXAM_DURATION_MS).toISOString();
+      saveState();
+    }
+    currentIndex = Math.max(0, Math.min(state.currentIndex || 0, TOTAL_QUESTIONS - 1));
+    showOnly("exam"); renderQuestion(); startTimer();
+  } else showLock();
+}
+function showLock() {
+  showOnly("intro");
+  $("startBtn").disabled = true;
+  $("introLock").classList.remove("hidden");
+  $("introLockText").textContent = "Nombre registrado: " + (state?.name || "no disponible") + ". Estado del intento: " + (state?.status === "completed" ? "finalizado" : "iniciado") + ".";
+}
+$("startBtn").addEventListener("click", () => {
+  const name = $("studentName").value.trim();
+  if (!name) { $("studentName").focus(); $("studentName").setCustomValidity("Escribe tu nombre completo antes de comenzar."); $("studentName").reportValidity(); $("studentName").setCustomValidity(""); return; }
+  if (readState()) { state = readState(); showLock(); return; }
+  const startedAt = new Date();
+  state = {name, startedAt:startedAt.toISOString(), deadlineAt:new Date(startedAt.getTime() + EXAM_DURATION_MS).toISOString(), status:"in_progress", currentIndex:0, questions:chooseBalancedQuestions()};
+  // The lock is written before the first question is shown.
+  saveState(); currentIndex = 0; showOnly("exam"); renderQuestion();
+});
+$("studentName").addEventListener("keydown", e => { if (e.key === "Enter") $("startBtn").click(); });
+
+function renderQuestion() {
+  const q = state.questions[currentIndex];
+  $("progressLabel").textContent = `Pregunta ${currentIndex+1} de ${TOTAL_QUESTIONS}`;
+  $("answeredLabel").textContent = `${state.questions.filter(x => x.selected !== null).length} de ${TOTAL_QUESTIONS} respondidas`;
+  $("progressBar").style.width = `${((currentIndex+1)/TOTAL_QUESTIONS)*100}%`;
+  $("topicPill").textContent = q.topic;
+  $("levelPill").textContent = q.level;
+  $("questionText").textContent = q.question;
+  const opts = $("options"); opts.innerHTML = "";
+  q.options.forEach((option, i) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "option" + (q.selected === i ? " selected" : "");
+    b.setAttribute("aria-pressed", q.selected === i ? "true" : "false");
+    const letter = document.createElement("span"); letter.className = "letter"; letter.textContent = letters[i];
+    const text = document.createElement("span"); text.className = "opttext"; text.textContent = option;
+    b.append(letter, text);
+    b.addEventListener("click", () => { q.selected = i; saveState(); renderQuestion(); });
+    opts.appendChild(b);
+  });
+  const dots = $("dots"); dots.innerHTML = "";
+  state.questions.forEach((item, i) => {
+    const b = document.createElement("button"); b.type = "button";
+    b.className = "dot" + (i === currentIndex ? " current" : "") + (item.selected !== null ? " done" : "");
+    b.textContent = i+1; b.setAttribute("aria-label", `Ir a la pregunta ${i+1}`);
+    b.addEventListener("click", () => { currentIndex = i; state.currentIndex = i; saveState(); renderQuestion(); });
+    dots.appendChild(b);
+  });
+  $("prevBtn").disabled = currentIndex === 0;
+  $("nextBtn").classList.toggle("hidden", currentIndex === TOTAL_QUESTIONS-1);
+  $("submitBtn").classList.toggle("hidden", currentIndex !== TOTAL_QUESTIONS-1);
+}
+$("prevBtn").addEventListener("click", () => { if(currentIndex>0){currentIndex--;state.currentIndex=currentIndex;saveState();renderQuestion();} });
+$("nextBtn").addEventListener("click", () => { if(currentIndex<TOTAL_QUESTIONS-1){currentIndex++;state.currentIndex=currentIndex;saveState();renderQuestion();} });
+function finalizeExam(timedOut = false) {
+  if (!state || state.status !== "in_progress") return;
+  if (timerInterval !== null) { clearInterval(timerInterval); timerInterval = null; }
+  state.status = "completed";
+  state.completedAt = new Date().toISOString();
+  state.timedOut = timedOut;
+  state.currentIndex = currentIndex;
+  state.correct = state.questions.filter(q => q.selected === q.answer).length;
+  state.grade = Math.round((state.correct / TOTAL_QUESTIONS * 5) * 10) / 10;
+  saveState();
+  renderResult();
+}
+$("submitBtn").addEventListener("click", () => {
+  const unanswered = state.questions.filter(q => q.selected === null).length;
+  const message = unanswered
+    ? `Te falta${unanswered===1?"":"n"} ${unanswered} pregunta${unanswered===1?"":"s"} por responder. ¿Quieres entregar de todas formas? Las preguntas vacías contarán como incorrectas.`
+    : "¿Confirmas que deseas finalizar y calificar el examen? No podrás cambiar las respuestas después de entregarlo.";
+  if (window.confirm(message)) finalizeExam(false);
+});
+
+function updateTimer() {
+  if (!state || state.status !== "in_progress") {
+    if (timerInterval !== null) { clearInterval(timerInterval); timerInterval = null; }
+    return;
+  }
+  const remaining = Math.max(0, new Date(state.deadlineAt).getTime() - Date.now());
+  const totalSeconds = Math.ceil(remaining / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  $("timerValue").textContent = `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+  $("timerBar").classList.toggle("warning", remaining <= 5 * 60 * 1000 && remaining > 60 * 1000);
+  $("timerBar").classList.toggle("expired", remaining <= 60 * 1000);
+  if (remaining <= 0) {
+    $("timerValue").textContent = "00:00";
+    window.alert("Se agotaron los 30 minutos. El examen se entregará automáticamente; las preguntas sin responder contarán como incorrectas.");
+    finalizeExam(true);
+  }
+}
+function startTimer() {
+  if (timerInterval !== null) clearInterval(timerInterval);
+  updateTimer();
+  if (state && state.status === "in_progress") timerInterval = setInterval(updateTimer, 250);
+}
+function renderResult() {
+  if (timerInterval !== null) { clearInterval(timerInterval); timerInterval = null; }
+  showOnly("result");
+  const correct = state.questions.filter(q => q.selected === q.answer).length;
+  const grade = Math.round((correct / TOTAL_QUESTIONS * 5) * 10) / 10;
+  state.correct = correct; state.grade = grade;
+  $("resultStudent").textContent = state.name;
+  $("resultDate").textContent = `Presentado el ${formatDate(state.completedAt || new Date().toISOString())}`;
+  $("timeoutNotice").classList.toggle("hidden", !state.timedOut);
+  $("score").textContent = grade.toLocaleString("es-CO",{minimumFractionDigits:1,maximumFractionDigits:1}) + " / 5,0";
+  $("scorePercent").textContent = `${Math.round(correct/TOTAL_QUESTIONS*100)} % de respuestas correctas`;
+  $("correctCount").textContent = `${correct}/${TOTAL_QUESTIONS}`;
+  $("wrongCount").textContent = TOTAL_QUESTIONS - correct;
+  const passed = grade >= PASSING_GRADE;
+  $("resultStatus").className = "status " + (passed ? "pass" : "fail");
+  $("resultStatus").textContent = passed ? "✓ Aprobado" : "✕ No aprobado";
+  const review = $("reviewList"); review.innerHTML = "";
+  state.questions.forEach((q, i) => {
+    const ok = q.selected === q.answer;
+    const item = document.createElement("article"); item.className = "review-item " + (ok ? "correct" : "incorrect");
+    const title = document.createElement("div"); title.className = "review-title";
+    const heading = document.createElement("h3"); heading.textContent = `${i+1}. ${q.question}`;
+    const mark = document.createElement("span"); mark.className = ok ? "correcttext" : "wrongtext"; mark.textContent = ok ? "Correcta" : "Incorrecta";
+    title.append(heading, mark); item.appendChild(title);
+    const chosen = document.createElement("p"); chosen.className = "answerline";
+    chosen.textContent = "Tu respuesta: " + (q.selected === null ? "Sin responder" : `${letters[q.selected]}. ${q.options[q.selected]}`);
+    item.appendChild(chosen);
+    const answer = document.createElement("p"); answer.className = "answerline correcttext";
+    answer.textContent = `Respuesta correcta: ${letters[q.answer]}. ${q.options[q.answer]}`;
+    item.appendChild(answer);
+    const exp = document.createElement("div"); exp.className = "explanation"; exp.textContent = q.explanation;
+    item.appendChild(exp); review.appendChild(item);
+  });
+  saveState();
+}
+$("printBtn").addEventListener("click", () => window.print());
+$("captureHintBtn").addEventListener("click", () => $("captureHint").classList.toggle("hidden"));
+init();
+</script>
+</body>
+</html>
